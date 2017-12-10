@@ -1,0 +1,16 @@
+<html>
+    <head>
+        <title> Welcome to Wally world!</title>
+    </head>
+    <body bgcolor="#CCFFCC">
+        <h1>
+            <% $m->base_comp->attr("head") %>
+        </h1>
+
+        % m->call_next;
+
+        <div class="center">
+            <a href="/">Home</a>
+        </div>
+    </body>
+</html>

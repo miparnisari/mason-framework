@@ -1,0 +1,5 @@
+<& header.mas, h1text => "Wally world home" &>
+
+Here at wally world you'll find all the finest accoutrements.
+
+<& footer.mas &>

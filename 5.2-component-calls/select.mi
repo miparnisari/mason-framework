@@ -1,0 +1,12 @@
+<%args>
+    $query
+</%args>
+
+<%init>
+    my $sth = $dbh->prepare($query);
+    while (my $row = $sth->fetchrow_hashref ) {
+        my $content = $m->content;
+        $content =~ s/%(\w+)/$row->{$1}/g;
+        $m->print($content);
+    }
+</%init>

@@ -1,0 +1,11 @@
+<%args>
+    $h1text    % variable scoped to this component
+</%args>
+<html>
+    <head>
+        <title> Welcome to Wally world!</title>
+    </head>
+    <body bgcolor="#CCFFCC">
+        <h1>
+            <% $h1text %>
+        </h1>

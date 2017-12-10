@@ -1,0 +1,60 @@
+<%args>
+    $color         # this argument is required!
+    $size => 20    # default size
+    $country => undef   # this argument is optional, defalt value is 'undef'
+    @items => (1, 2, 'something else')
+    %pairs => (name => "John", age => 29)
+</%args>
+<%attr>
+    $author = 'maria ines parnisari'
+</%attr>
+
+# This runs every time the component is called
+<%init>
+    my $temp = "30.1 C";
+</%init>
+
+It is currently <% temperature %> degrees Celsius.
+
+# Substitution tags
+% $cd_count = 207; #this is embedded perl
+# A substitution tag can contain a Perl expression
+You have <% $cd_count %> CD<% $cd_count != 1 ? 's' : '' %>
+
+# Escaping substitutions
+% $homepage = "www.google.com";
+Homepage: <a href="redirect?url=<% $homepage | u %>">Link<a/>
+
+# A random block of Perl code
+<%perl>
+    my @people = ('mary' 'john' 'pete' 'david');
+<%perl>
+
+# Note how each line of code begisn with the mandatory %
+% foreach my $person (@people) {
+    Name: <% $person %>
+% }
+
+# a nice subcomponent that renders a hyperlink
+<%def .make_a_link>
+    <a href="<% url %>"> <% text %></a>
+</%def>
+<%args>
+    $path
+    %query => ()
+    $text
+</%args>
+<%init>
+    my $url = $path;
+    if (scalar (keys %query) > 0) {
+        $url = $url . "?"
+    }
+    foreach my $queryParam (keys %query) {
+        $url = $url . $queryParam . "=" . $query{$queryParam} . "&";
+    }
+</%init>
+
+# This code runs at the very end of the component
+<%filter>
+    s/(\w+)/\U$1/g #uppercase the entire thing
+</%filter>

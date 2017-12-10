@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>
+            Example.com
+        </title>
+    </head>
+    <body>
+%       $m->call_next;          # Go one step down the inheritance hierarchy and start processing its child component
+
+        <br/>
+        <a href="/">Home</a>
+    </body>
+</html>
+
+<%init>
+    # Variable shared among components
+    $dbh = DBI->connect('DBI:mysql:mydb;mysql_read_default_file=/home/ken/my.cnf')
+        or die("Error: $DBI::errstr");
+</%init>

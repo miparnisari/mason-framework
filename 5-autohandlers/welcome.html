@@ -1,0 +1,17 @@
+<%args>
+    $user
+</%args>
+
+% if (defined $name) {
+    <p>Info for user: </p>
+    <b>Name: $name</b>
+    <b>Age: $age</b>
+% } else {
+    <p>Sorry, no such user.</p>
+% }
+<p> Welcome to a very wonderful site. We hope you enjoy your stay.</p>
+
+<%init>
+    my ($name, $age) = $dbh->selectrow_array
+        ("SELECT name, age FROM users WHERE user=?", undef, $user);
+</%init>

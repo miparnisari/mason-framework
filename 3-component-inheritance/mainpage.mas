@@ -1,0 +1,18 @@
+<%attr>
+    head => "Wally world home"
+</%attr>
+
+Here at wally world you'll find all the finest accoutrements.
+
+What follows is a table.
+
+% my @array = qw(zero one two);
+
+<table>
+    % foreach my $row (0..$#array) {
+        <tr>
+            <td><% $row          %></td>
+            <td><% $array[$row]  %></td>
+        </tr>
+    % }
+</table>

@@ -1,0 +1,4 @@
+% comments start with %
+% my $planet = "world";
+% What comes next is a substitution tag;
+Hello, <% $planet %>!

@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>
+            <% $m->base_comp->attr('title') %>
+        </title>
+    </head>
+    <body>
+        <% $m->base_comp->attr('header') %>
+%       $m->call_next;
+        <br/>
+        <a href="/">Home</a>
+    </body>
+</html>
+
+<%init>
+    # Variable shared among components
+    $dbh = DBI->connect('DBI:mysql:mydb;mysql_read_default_file=/home/ken/my.cnf')
+        or die("Error: $DBI::errstr");
+</%init>
+
+<%attr>
+    title => "Fancy mason site"
+    header => "Welcome to fancy mason site"
+</%attr>
