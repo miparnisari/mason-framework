@@ -36,7 +36,7 @@ Mason provides a sophisticated caching mechanism that controls how often the out
 
 | Tag                    | Description                                                     |
 | -------------          | -------------                                                   |
-| `<% ... %>`            | Substitution. Perl code that is evaluated and sent as output. It is possible to escape the contents before it is sent as output. For example: `<% $homepage | u %>` for URI escaping. `| h` can be used for HTML entity escaping.    |
+| `<% ... %>`            | Substitution. Perl code that is evaluated and sent as output. It is possible to escape the contents before it is sent as output. For example: `<% $homepage` &#124; `u %>` for URI escaping. &#124; h can be used for HTML entity escaping.    |
 | `% ...`                | A single line of Perl code. The `%` **must** be at the beginning of the line.    |
 | `<%perl> ... </%perl>` | A block of Perl code                                            |
 | `<& ... &>`            | A call to another component                                     |
@@ -52,7 +52,7 @@ Mason provides a sophisticated caching mechanism that controls how often the out
 | `<%attr> ... </%attr>`      | This block is similar to `<%flags>` but its key-value pairs can be part of the inheritance chain. So the parent component can use them like `$m->base_comp->attr('name')`  |
 | `<%def .name> ... </%def>`        | Used to create subcomponents (i.e. components that can only be accessed within a component). They require a name in the tag. |
 | `<%method> .. </%method>`    | Similar to a `<%def>` block, but the methods defined here are visible outside of the component and can be inherited. |
-| `<&| .filter> ... </&>`    | Calls a component and applies the named filter. The output of the called component can be retrieved via `$m->content` |
+| `<&`&#124;` .filter> ... </&>`    | Calls a component and applies the named filter. The output of the called component can be retrieved via `$m->content` |
 
 
 # 3. Object-Style Component Inheritance
