@@ -26,7 +26,7 @@ A component is code that accepts inputs and generates output text. Components ca
 
 A component can call another component using the `<& component_name &>` syntax, and pass parameters like this: `<& component_name, parameter => "value" &>`. An alternative to this syntax is `$m->comp()`. `$m` contains the `HTML::Mason::Request` object. The third way to call a component is via a URL.
 
-Components can accept arguments within the `<%args>..</%args>` block. Additionally, the `$m->comp()` syntax allows getting results back rather than outputting text. Perl's `return()` function will end processing of the component. A component may return either a scalar o a list.
+Components can accept arguments within the `<%args>..</%args>` block. Additionally, the `$m->comp()` syntax allows getting results back rather than outputting text. Perl's `return()` function will end processing of the component. A component may return either a scalar or a list.
 
 Components can also define subcomponents via the `<%def>` block. These are like functions only visible to the component.
 
